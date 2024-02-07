@@ -39,24 +39,9 @@ with st.expander("PROJECT DETAILS"):
     st.write('I used only content-based features. I didn\'t use url-based faetures like length of url etc.'
              'Most of the features extracted using find_all() method of BeautifulSoup module after parsing html.')
 
-    st.subheader('Results')
-    st.write('I used 7 different ML classifiers of scikit-learn and tested them implementing k-fold cross validation.'
-             'Firstly obtained their confusion matrices, then calculated their accuracy, precision and recall scores.'
-             'Comparison table is below:')
+    
     st.table(ml.df_results)
-    st.write('NB --> Gaussian Naive Bayes')
-    st.write('SVM --> Support Vector Machine')
-    st.write('DT --> Decision Tree')
-    st.write('RF --> Random Forest')
-    st.write('AB --> AdaBoost')
-    st.write('NN --> Neural Network')
-    st.write('KN --> K-Neighbours')
-
-with st.expander('EXAMPLE PHISHING URLs:'):
-    st.write('_https://rtyu38.godaddysites.com/_')
-    st.write('_https://karafuru.invite-mint.com/_')
-    st.write('_https://defi-ned.top/h5/#/_')
-    st.caption('REMEMBER, PHISHING WEB PAGES HAVE SHORT LIFECYCLE! SO, THE EXAMPLES SHOULD BE UPDATED!')
+    
 
 choice = st.selectbox("Please select your machine learning model",
                  [
