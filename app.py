@@ -9,11 +9,10 @@ import matplotlib.pyplot as plt
 
 st.title('Phishing Website Detection using Machine Learning')
 st.write('This ML-based app is developed for educational purposes. Objective of the app is detecting phishing websites only using content data. Not URL!'
-         ' You can see the details of approach, data set, and feature set if you click on _"See The Details"_. ')
+         ' You can see the details of approach, data set, and feature set if you click on "See The Details". ')
 
 
 with st.expander("PROJECT DETAILS"):
-    st.subheader('Approach')
   
 
     st.markdown('label is 1 for phishing, 0 for legitimate')
@@ -35,17 +34,11 @@ with st.expander("PROJECT DETAILS"):
         mime='text/csv',
     )
 
-    st.subheader('Features')
-    st.write('I used only content-based features. I didn\'t use url-based faetures like length of url etc.'
-             'Most of the features extracted using find_all() method of BeautifulSoup module after parsing html.')
-
     
-    st.table(ml.df_results)
-    
-
 choice = st.selectbox("Please select your machine learning model",
                  [
-                     'Decision Tree', 'Neural Network', 'K-Neighbours'
+                      'Decision Tree', 
+                     'AdaBoost', 'Neural Network'
                  ]
                 )
 
@@ -87,10 +80,10 @@ if st.button('Check!'):
             result = model.predict(vector)
             if result[0] == 0:
                 st.success("This web page seems a legitimate!")
-                st.balloons()
+                # st.balloons()
             else:
                 st.warning("Attention! This web page is a potential PHISHING!")
-                st.snow()
+                # st.snow()
 
     except re.exceptions.RequestException as e:
         print("--> ", e)
