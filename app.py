@@ -79,7 +79,7 @@ if st.button('Check!'):
             vector = [fe.create_vector(soup)]  # it should be 2d array, so I added []
             result = model.predict(vector)
             if result[0] == 0:
-                st.success("This web page seems a legitimate!")
+                st.success("This web page seems a legitimaterdhgffghfhgfhgfgfhggh!")
                 # st.balloons()
             else:
                 st.warning("Attention! This web page is a potential PHISHING!")
